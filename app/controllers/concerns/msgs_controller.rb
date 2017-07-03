@@ -4,6 +4,8 @@ class MsgsController < ApplicationController
 		@message.sender_id = current_user.id
 		if @message.save
 			redirect_to "#{user_path(msg_params[:user_id])}/#message"
+		else
+			redirect_to "#{user_path(msg_params[:user_id])}/#message"
 		end
 	end
 
@@ -16,5 +18,6 @@ class MsgsController < ApplicationController
 	def msg_params
 		params.require(:msg).permit(:user_id, :message)
 	end
+
 
 end

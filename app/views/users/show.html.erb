@@ -58,16 +58,20 @@
       <%= f.text_field :message,class: "form-control", placeholder: "Enter your message" %>
           </div>
           <div class="col-sm-1">
-      <%= button_tag "", type: 'submit', class: "btn btn-default glyphicon glyphicon-chevron-right" %>
+           <%= button_tag "send", type: 'submit', class: "btn btn-default fa fa-send" %>
+      
       </div>
         
 
 <% end %>
+
+
+
 </br>
 </br>
 </br>
 
 
-<div class='center'>
+<div align='center'>
 <%= link_to "My chats",chats_path %>
 </div>
