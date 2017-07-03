@@ -55,7 +55,7 @@
       <%= f.label :message, style: 'display:none' %>
             </div>
           <div class="col-sm-10 " id="message">
-      <%= f.text_field :message,class: "form-control", placeholder: "Enter your message" %>
+      <%= f.text_field :message,class: "form-control", placeholder: "Enter your message",autocomplete: 'off',autofocus: 'true' %>
           </div>
           <div class="col-sm-1">
            <%= button_tag "send", type: 'submit', class: "btn btn-default fa fa-send" %>
@@ -73,5 +73,6 @@
 
 
 <div align='center'>
-<%= link_to "My chats",chats_path %>
+<a href="<%= user_path(@user) %>/#message">Refresh</a>
 </div>
+

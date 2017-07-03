@@ -51,7 +51,7 @@
           <ul class="nav navbar-nav">
             <li><%= link_to "Home", root_path  %></li>
             <li><%= link_to "My chats", chats_path  %></li>
-            
+            <li><%= link_to "My groups", groups_path  %></li>
             <li><%= link_to (current_user ? 'Log out' : 'Log in '),destroy_user_session_path, method: :delete %></li>
           </ul>
         </div>
