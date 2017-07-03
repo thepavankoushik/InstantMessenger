@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get 'chats',to: 'users#chats'
 
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
