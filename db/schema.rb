@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20170703130859) do
     t.integer  "sender_id"
     t.string   "message"
     t.datetime "created_at"
-    t.time     "updated_at"
+    t.datetime     "updated_at"
   end
 
   create_table "user_messages", force: :cascade do |t|
