@@ -1,1 +1,12 @@
 <%= @user.email %>
+
+<p> send a message </p>
+<% form_for 
+
+
+<h2>listing of all his/her messages </h2>
+<% @mess.each do |mess| %>
+<% if mess.sender_id == @user.id %>
+ <%= mess.message %>
+<% end %>
+<% end %>

@@ -5,8 +5,12 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 
-	end
+		#@mess = Msg.find_by_sender_id(@user.id)
+		@mess = current_user.msgs
+		@message = Msg.new
 
+	end
+	
 
 
 

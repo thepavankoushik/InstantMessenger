@@ -6,6 +6,8 @@ gem 'rails', '4.2.6'
 gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
+gem 'will_paginate', '3.0.7'
+gem 'bootstrap-will_paginate','0.0.10'
 # Use sqlite3 as the database for Active Record
 
 # Use SCSS for stylesheets
