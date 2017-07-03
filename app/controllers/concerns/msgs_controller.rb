@@ -8,7 +8,9 @@ class MsgsController < ApplicationController
 	end
 
 	def destroy
-
+		@message = Msg.find(params[:id])
+		@message.destroy
+		redirect_to root_path
 	end
 	private
 	def msg_params
