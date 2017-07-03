@@ -1,1 +1,3 @@
 <h1> this is the home page of the <%= current_user.email %> </h1>
+
+<%= link_to 'logout',destroy_user_session_path, method: :delete %>
