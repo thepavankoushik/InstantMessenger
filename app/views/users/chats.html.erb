@@ -1,3 +1,5 @@
+
+<% if @senders.size >0 %>
 <h1 align="center"> Continue where you left</h1>
 </br>
 </br>
@@ -28,3 +30,9 @@
 <%end%>
 <%= will_paginate  @senders%>
 </div>
+
+<% else %>
+<h1 align="center"> You have not started any conversations</h1>
+<h2 align="center"> <%= link_to "way to start new convos..",users_path %>
+
+<% end %>
