@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
 	end
 	def chats
+		
 		@senders = current_user.senders.paginate(page: params[:page],per_page: 5)
 	end
 

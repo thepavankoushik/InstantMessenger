@@ -3,18 +3,25 @@
 </br>
 <div align="center">
 <%= will_paginate @senders%>
+<% arr = Array.new %>
 <% @senders.each do |user| %>
+<% if arr.include? user %>
+
+
+<% else %>
+<% arr.push(user) %>
 <% if user != current_user %>
 <ul class="listing">
 <div class="row">
 <div class="well col-md-4 col-md-offset-4">
 
-<li class="article-title"><%= link_to user.email, user_path(user)%></li>
+<li class="article-title"><a href="<%= user_path(user) %>/#message"><%= user.email %></a></li>
 
 
 </div>
 </div>
 </ul>
+<% end %>
 <% end %>
 
 	
