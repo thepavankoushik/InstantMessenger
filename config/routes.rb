@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   resources 'msgs',only: [:create,:destroy]
 
+  get 'chats',to: 'users#chats'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

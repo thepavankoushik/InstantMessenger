@@ -1,7 +1,39 @@
+<div align="">
+<% @mess.each do |mess| %>
+<% if mess.sender_id == @user.id %> 
+ </ul>
 
-<%= @user.email %>
+<ul class="listing">
+<div class="row">
+<div class="well col-md-15 ">
 
-<p> send a message </p>
+<li class="article-title"><%= mess.message %></li>
+
+
+</div>
+</div>
+</ul>
+<% elsif mess.sender_id == current_user.id %>
+</ul>
+
+<ul class="listing">
+<div class="row">
+<div class="well col-md-15 ">
+
+<li class="article-title left"><%= mess.message %></li>
+
+
+</div>
+</div>
+</ul>
+
+<% end %>
+
+</li>
+<% end %>
+</div>
+
+<p> send a message to <%= @user.email %> </p>
 
 <div class="row">
   <div class="col-md-12">
@@ -15,14 +47,14 @@
       <%= f.label "to" %>
             </div>
           <div class="col-sm-8">
-      <%= f.text_field :user_id,class: "form-control", placeholder: @user.id %>
+      <%= f.text_field :user_id,class: "form-control", placeholder: @user.id ,value: @user.id %>
                 </div>
               </div>
               <div class="form-group">
-                <div class="control-label col-sm-2">
+                <div class="control-label col-sm-1">
       <%= f.label :message %>
             </div>
-          <div class="col-sm-8">
+          <div class="col-sm-11 " id="message">
       <%= f.text_field :message,class: "form-control", placeholder: "Enter your message" %>
           </div>
         </div>
@@ -34,17 +66,3 @@
 
 
 <% end %>
-
-
-<h2>listing of all his/her messages </h2>
-<ul>
-<% @mess.each do |mess| %>
-<li>
-<% if mess.sender_id == @user.id %>
- <%= mess.message %>
- 
- <%= link_to "x", msg_path(mess),method: :delete,class: 'close',data_dismiss: 'alert'%> 
-<% end %>
-</li>
-<% end %>
-</ul>
