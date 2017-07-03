@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170703075329) do
+ActiveRecord::Schema.define(version: 20170703095204) do
+
+  create_table "messages", force: :cascade do |t|
+    t.integer "recipient_id"
+    t.text    "msg"
+    t.integer "sender_id"
+  end
+
+  create_table "msgs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "sender_id"
+    t.string  "message"
+  end
+
+  create_table "user_messages", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "sender_id"
+    t.string  "message"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

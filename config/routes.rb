@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'users',to: 'users#index'
 
+  resources 'users',except: [:index]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
