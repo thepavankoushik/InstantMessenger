@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	require 'will_paginate/array'
 	def index
 		@users = User.paginate(page: params[:page],per_page: 5)
 	end
@@ -19,8 +20,8 @@ class UsersController < ApplicationController
 
 	end
 	def chats
-		
-		@senders = current_user.senders.paginate(page: params[:page],per_page: 5)
+		@temp = current_user.senders.uniq
+		@senders = @temp.paginate(page: params[:page],per_page: 5)
 	end
 
 	

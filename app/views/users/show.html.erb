@@ -5,22 +5,33 @@
 
 <ul class="listing">
 <div class="row">
-<div class="well col-md-15 ">
+<div class="well col-md-15 mclass">
 
 <li class=""><%= mess.message %></li>
+<div class="article-meta-details">
+            <small>
+                    <%= time_ago_in_words(mess.created_at) %> ago,
+            </small>
+</div>
 
 
 </div>
 </div>
 </ul>
+
 <% elsif mess.sender_id == current_user.id %>
 </ul>
 
 <ul class="listing">
 <div class="row">
-<div class="well col-md-15 ">
+<div class="well col-md-15 mclass">
 
-<li class="left"><%= mess.message %></li>
+<li class="left"><%= mess.message %></li></br>
+<div class="article-meta-details left">
+            <small>
+                    <%= time_ago_in_words(mess.created_at) %> ago,
+            </small>
+</div>
 
 
 </div>
