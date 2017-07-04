@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :msgs
   has_many :senders, through: :msgs
+  has_many :groups
+  has_many :group_messages
 end

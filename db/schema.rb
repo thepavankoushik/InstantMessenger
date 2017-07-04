@@ -11,9 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170703151707) do
+ActiveRecord::Schema.define(version: 20170704174932) do
+
+  create_table "group_messages", force: :cascade do |t|
+    t.integer  "group_id"
+    t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "sender_id"
+  end
 
   create_table "groups", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "members",    default: "--- []\n"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "message"
   end
 
   create_table "messages", force: :cascade do |t|

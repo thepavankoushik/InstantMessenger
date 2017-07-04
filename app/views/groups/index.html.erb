@@ -1,1 +1,13 @@
 <h1 align="center">Listing all your groups convos </h1>
+
+<% @groups.each do |group| %>
+<% @mems = group.members %>
+<% @temp = current_user.id.to_s %>
+
+<% if group.user == current_user %>
+<%= group.name %>
+<% elsif @mems.include? @temp %>
+<%= group.name %>
+<% end %>
+
+<% end %>

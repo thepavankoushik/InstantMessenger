@@ -14,7 +14,8 @@ Rails.application.routes.draw do
 
   get 'chats',to: 'users#chats'
 
-  resources 'groups',only: [:index,:new,:show]
+  resources 'groups'
+  resources 'group_messages'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
