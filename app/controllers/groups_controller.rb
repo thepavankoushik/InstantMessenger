@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
 	def index
 		@groups = Group.all
+		@groups = Group.paginate(page: params[:page],per_page: 5)
 
 	end
 
@@ -19,9 +20,11 @@ class GroupsController < ApplicationController
 	end
 
 	def show
+
 		@group = Group.find_by_id(params[:id])
-		@messages = @group.group_messages
 		
+		@messages = @group.group_messages
+
 		@new_message = GroupMessage.new
 
 	end

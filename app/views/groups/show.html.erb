@@ -10,7 +10,7 @@
 		<%= msg.message %>
 	<% end %>
 <% else %>
-	<%= "you dont belong here" %>
+	<%= controller.redirect_to root_path %>
 <% end %>
 
 
@@ -25,7 +25,7 @@
       <%= f.label :group_id %>
         </div>
         <div class="col-sm-8">
-       
+
           <%= f.text_field :group_id, class: "form-control", value: @group.id%>
         </div>
       </div>
