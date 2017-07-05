@@ -23,8 +23,8 @@ class GroupsController < ApplicationController
 		if @group.save
 			redirect_to group_path(@group)
 		else
-			debugger
-			redirect_to groups_path
+			
+			redirect_to new_group_path
 		end
 	end
 
