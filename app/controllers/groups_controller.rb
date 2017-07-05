@@ -25,6 +25,7 @@ class GroupsController < ApplicationController
 		
 		@messages = @group.group_messages
 
+
 		@new_message = GroupMessage.new
 
 	end

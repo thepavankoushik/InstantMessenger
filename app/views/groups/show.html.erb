@@ -1,17 +1,126 @@
 
 <% @temp = current_user.id.to_s %>
 
-<% if current_user == @group.user %>
-	<% @messages.each do |msg| %>
-		<%= msg.message %>
-	<% end %>
-<% elsif  @group.members.include? @temp %>
-	<% @messages.each do |msg| %>
-		<%= msg.message %>
-	<% end %>
+
+<div align="">
+
+<% if current_user == @group.user %> 
+        <% @messages.each do |mess| %>
+          <% if mess.sender_id != current_user.id %> 
+           </ul>
+          
+          <ul class="listing">
+          <div class="row">
+          <div class="well col-md-15 mclass">
+          <div class="article-meta-details">
+                      <small>
+                            ~<%= mess.sender.email  %>
+                      </small>
+          </div>
+          
+          <li class=""><%= mess.message %></li>
+          <div class="article-meta-details">
+                      <small>
+                              <%= time_ago_in_words(mess.created_at) %> ago,
+                      </small>
+          </div>
+          
+          
+          </div>
+          </div>
+          </ul>
+          
+          <% elsif mess.sender_id == current_user.id %>
+          </ul>
+          
+          <ul class="listing">
+          <div class="row">
+          <div class="well col-md-15 mclass">
+          
+          <li class="left"><%= mess.message %></li></br>
+          <div class="article-meta-details left">
+                      <small>
+                              <%= time_ago_in_words(mess.created_at) %> ago,
+                      </small>
+          </div>
+          
+          
+          </div>
+          </div>
+          </ul>
+          
+          <% end %>
+          
+          </li>
+          <% end %>
+
+<% elsif @group.members.include? @temp %>
+    <% @messages.each do |mess| %>
+          <% if mess.sender_id != current_user.id %> 
+           </ul>
+          
+          <ul class="listing">
+          <div class="row">
+
+          <div class="well col-md-15 mclass">
+          <div class="article-meta-details">
+                      <small>
+                            ~<%=mess.sender.email  %>
+                      </small>
+          </div>
+          
+          
+          <li class=""><%= mess.message %></li>
+          <div class="article-meta-details">
+                      <small>
+                              <%= time_ago_in_words(mess.created_at) %> ago,
+                      </small>
+          </div>
+          
+          
+          </div>
+          </div>
+          </ul>
+          
+          <% elsif mess.sender_id == current_user.id %>
+          </ul>
+          
+          <ul class="listing">
+          <div class="row">
+          <div class="well col-md-15 mclass">
+          
+          <li class="left"><%= mess.message %></li></br>
+          <div class="article-meta-details left">
+                      <small>
+                              <%= time_ago_in_words(mess.created_at) %> ago,
+                      </small>
+          </div>
+          
+          
+          </div>
+          </div>
+          </ul>
+          
+          <% end %>
+          
+          </li>
+          <% end %>
+
+
+
 <% else %>
-	<%= controller.redirect_to root_path %>
+  <%= controller.redirect_to root_path %>
 <% end %>
+
+</li>
+
+</div>
+
+
+
+
+
+
 
 
 <div class="row">
@@ -20,9 +129,9 @@
 
     <%= form_for( @new_message, :html=>{class: "form-horizontal", role: "form"}) do |f| %>
 
-      <div class="form-group">
+      <div class="form-group", style="display:none;">
         <div class="control-label col-sm-2">
-      <%= f.label :group_id %>
+      <%= f.label :group_id  %>
         </div>
         <div class="col-sm-8">
 
@@ -30,22 +139,31 @@
         </div>
       </div>
         <div class="form-group">
-          <div class="control-label col-sm-2">
-      <%= f.label :message %>
+          <div class="control-label col-sm-0">
+      <%= f.label :message, style: 'display:none' %>
             </div>
-          <div class="col-sm-8">
-      <%= f.text_field :message,class: "form-control", placeholder: "Enter your message",autofocus: true %>
-          </div>
-        </div>
-        
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-      <%= f.submit('send',class: "btn btn-primary btn-lg") %>
+          <div class="col-sm-10" id="message">
+      <%= f.text_field :message,class: "form-control", placeholder: "Enter your message",autofocus: true, autocomplete: 'off' %>
+      <div class="col-sm-1">
+           <%= button_tag "send", type: 'submit', class: "btn btn-default fa fa-send" %>
+      
       </div>
-    </div>
+         
+        
+    
 
 
     <% end %>
     
   </div>
 </div>
+
+</br>
+</br>
+</br>
+
+
+<div align='center'>
+<a href="<%= group_path(@group) %>/#message">Refresh</a>
+</div>
+
