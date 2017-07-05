@@ -8,6 +8,12 @@ class GroupsController < ApplicationController
 	def new
 		@group = Group.new
 		@users = User.all
+		@usrs = Array.new
+		@users.each do |usr|
+			if usr != current_user
+				@usrs.push(usr)
+			end
+		end
 	end
 
 	def create
@@ -16,6 +22,9 @@ class GroupsController < ApplicationController
 		
 		if @group.save
 			redirect_to group_path(@group)
+		else
+			debugger
+			redirect_to groups_path
 		end
 	end
 

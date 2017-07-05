@@ -11,11 +11,14 @@
       <%= f.label :name %>
         </div>
         <div class="col-sm-8">
-          <%= f.text_field :name, class: "form-control", placeholder: "Enter group name", autofocus: true%>
+          <%= f.text_field :name, class: "form-control", placeholder: "Enter group name", autofocus: true, autocomplete: 'off' %>
         </div>
       </div>
-      
-     		<%= f.collection_check_boxes :members, User.all, :id, :email %>
+        
+
+       
+     		<%= f.collection_check_boxes :members, @usrs, :id, :email ,{:item_wrapper_class => 'checkbox_container'}%>
+        </br>
 		
         
     <div class="form-group">
