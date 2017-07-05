@@ -54,7 +54,7 @@
           </li>
           <% end %>
 
-<% elsif @group.members.include? @temp %>
+<% elsif @group.members.include? @temp or @group.members.include? current_user.id %>
     <% @messages.each do |mess| %>
           <% if mess.sender_id != current_user.id %> 
            </ul>
