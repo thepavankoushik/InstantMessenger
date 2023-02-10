@@ -2,11 +2,7 @@
 
 **InstantMessenger** is a communication platform that allows users to connect with friends and colleagues in real-time. With its user-friendly interface and powerful features, InstantMessenger makes it easy to stay connected with the people who matter most.
 
-One of the key features of InstantMessenger is its direct messaging functionality, which allows users to send one-on-one messages to other users in real-time. This feature is perfect for keeping in touch with friends and family, or for quick and efficient communication with colleagues and team members.
-
-In addition to direct messaging, InstantMessenger also offers group chat functionality. Users can create groups and invite others to join, making it easy to coordinate and collaborate with multiple people at once. Group chats are perfect for team projects, family events, or any other situation where multiple people need to communicate in real-time.
-
-Overall, InstantMessenger is a powerful and versatile communication platform that makes it easy to stay connected with the people who matter most. Whether you're looking to stay in touch with friends and family, or to coordinate and collaborate with colleagues, InstantMessenger has you covered.
+[![My Tech Stack](https://github-readme-tech-stack.vercel.app/api/cards?title=Project%20Tech%20Stack&lineCount=3&theme=windows&line1=rubyonrails,rubyonrails,b8038b;heroku,heroku,499c42;PostgreSQL,PostgreSQL,57b9d6;&line2=html5,html5,7df9f0;css3,css3,29444a;redux,redux,013acf;bootstrap,bootstrap,845f77;&line3=javascript,javascript,48fa46;)](https://github-readme-tech-stack.vercel.app/api/cards?title=Project%20Tech%20Stack&lineCount=3&theme=windows&line1=rubyonrails,rubyonrails,b8038b;heroku,heroku,499c42;PostgreSQL,PostgreSQL,57b9d6;&line2=html5,html5,7df9f0;css3,css3,29444a;redux,redux,013acf;bootstrap,bootstrap,845f77;&line3=javascript,javascript,48fa46;)
 
 ## Install
 
